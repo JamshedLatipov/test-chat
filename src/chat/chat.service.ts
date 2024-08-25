@@ -21,7 +21,8 @@ export class ChatService {
                 apiKey: this._configService.get<string>('OPEN_AI_KEY'),
                 temperature: CHAT_TEMPERATURE,
                 model: CHAT_MODEL,
-            });
+                streaming: true,
+            }, {});
 
             const chain = prompt.pipe(model);
 
